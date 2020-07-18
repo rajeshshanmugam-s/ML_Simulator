@@ -15,6 +15,11 @@ def test_route():
     return "Working"
 
 
+@app.route("/test")
+def basic_template():
+    return flk.render_template('template.html')
+
+
 @app.route('/predict')
 def predcit():
     sex = flk.request.args.get("Sex")
@@ -24,7 +29,6 @@ def predcit():
     purpose = flk.request.args.get("Purpose")
     job = flk.request.args.get("Job")
     ca = flk.request.args.get("Credit amount")
-    print(ca)
     age = flk.request.args.get("Age")
     duration = flk.request.args.get("Duration in Months")
 
@@ -35,6 +39,6 @@ def predcit():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(app.run(host='0.0.0.0', debug=True, port=6503))
 
 
