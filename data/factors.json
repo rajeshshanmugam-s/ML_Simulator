@@ -1,4 +1,5 @@
-{"factors": [{"factor_name": "Sex", "range": ["male", "female"], "interval": null, "type": "categorical"},
+{"factors": [
+  {"factor_name": "Sex", "range": ["male", "female"], "interval": null, "type": "categorical"},
   {"factor_name": "Housing", "range": ["own", "free", "rent"], "interval": null, "type": "categorical"},
   {"factor_name": "Saving accounts", "range": ["no_inf", "little", "quite rich", "rich", "moderate"], "interval": null, "type": "categorical"},
   {"factor_name": "Checking account", "range": ["little", "moderate", "no_inf", "rich"], "interval": null, "type": "categorical"},

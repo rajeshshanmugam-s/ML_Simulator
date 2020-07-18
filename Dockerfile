@@ -8,6 +8,7 @@ RUN pip install --upgrade pip && \
     pip install pipenv && \
     pipenv install --deploy --system
 
+COPY . /app/
 
 EXPOSE 7501
 
