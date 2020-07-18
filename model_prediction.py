@@ -13,6 +13,11 @@ def predictor(input_factors=list):
 
 
 def prob_prdictor(input_factors=list):
+    """
+    For predicting probability of the prediction
+    :param input_factors: factors for the model
+    :return: precicted prob
+    """
     prediction_prob = model.predict_proba(input_factors)
     out = ut.translator(prediction_prob, True)
     return out

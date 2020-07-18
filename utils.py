@@ -7,6 +7,10 @@ with open(config.factor_codes) as file:
 
 
 def cat_decoder(sex, housing, savings_acc, checking_acc, purpose, job):
+    """
+    Convert the strings to int for the model input
+    :return: decoded factors
+    """
     sex = factor_codes['sex'][sex]
     housing = factor_codes['Housing'][housing]
     savings_acc = factor_codes['Saving_accounts'][savings_acc]
@@ -17,6 +21,12 @@ def cat_decoder(sex, housing, savings_acc, checking_acc, purpose, job):
 
 
 def translator(prediction, prob=False):
+    """
+    Converts the prediction to the user readable form
+    :param prediction: prediction from the model
+    :param prob: Prob scores of the prediction
+    :return: converted prediction
+    """
     if prob:
         out = dict()
         out["Bad"] = prediction[0][0]
@@ -28,13 +38,14 @@ def translator(prediction, prob=False):
 
 def factors_organiser(age, sex, job, housing, saving_accounts, checking_account,
                       credit_amount, duration, purpose):
-    print(credit_amount)
+    """
+    Prepares and organises the input factors for the model prediction
+    :return: factors in 2d Array
+    """
+    # Fixme: Below is not the right way to do this
     sex, housing, saving_accounts, checking_account, purpose, job = cat_decoder(sex, housing, saving_accounts,
                                                                                 checking_account, purpose, job)
-    factors = [age, sex, job, housing, saving_accounts, checking_account,
-                      credit_amount, duration, purpose]
 
-    # factors = [int(age), int(sex), int(job), int(housing), int(saving_accounts), int(checking_account),
-    #            int(credit_amount), int(duration), int(purpose)]
-    print(factors)
-    return [factors]
+    factors = [age, sex, job, housing, saving_accounts, checking_account, credit_amount, duration, purpose]
+
+    return [factors]  # For converitng 2d array

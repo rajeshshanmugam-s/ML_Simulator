@@ -22,6 +22,8 @@ def basic_template():
 
 @app.route('/predict')
 def predcit():
+
+    # FIXME: Change the input sequence in a dynamic way.
     sex = flk.request.args.get("Sex")
     housing = flk.request.args.get("Housing")
     saving_accounts = flk.request.args.get("Savings accounts")
@@ -32,6 +34,7 @@ def predcit():
     age = flk.request.args.get("Age")
     duration = flk.request.args.get("Duration in Months")
 
+    # Organises the input factors for the prediction
     factors = ut.factors_organiser(age, sex, job, housing, saving_accounts, checking_account,
                                    ca, duration, purpose)
     out = mp.prob_prdictor(factors)
@@ -39,6 +42,6 @@ def predcit():
 
 
 if __name__ == '__main__':
-    app.run(app.run(host='0.0.0.0', debug=True, port=6503))
+    app.run(app.run(host='0.0.0.0', debug=True, port=7501))
 
 
