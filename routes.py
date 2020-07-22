@@ -3,10 +3,10 @@ import flask as flk
 import utils as ut
 import model_prediction as mp
 
-app = flk.Flask(__name__)
+app = flk.Flask(__name__, static_folder='./templates', static_url_path='/')
 
 
-@app.route('/')
+@app.route('/test')
 def test_route():
     """
     Testing whether the application is on.
@@ -15,9 +15,9 @@ def test_route():
     return "Working"
 
 
-@app.route("/test")
+@app.route("/")
 def basic_template():
-    return flk.render_template('template.html')
+    return flk.render_template('index.html')
 
 
 @app.route('/predict')
