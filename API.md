@@ -1,3 +1,21 @@
+Input: 
+
+```
+/predict?Sex=male&Housing=free&Savings accounts=little&Checking account=little&Purpose=business&Job=unskilled and non-resident&Age=23&Duration in Months=32&Credit amount=2345
+```
+
+Output: 
+
+```json
+{
+"bad": 0.0, 
+"good": 1.0
+}
+
+```
+
+sample factor
+```json
 ```json
 {
     "factors": [
@@ -30,16 +48,4 @@
         }
     ]
 }
-```
-
-```
-/predict?Sex=male&Housing=free&Savings accounts=little&Checking account=little&Purpose=business&Job=unskilled and non-resident&Age=23&Duration in Months=32&Credit amount=2345
-```
-
-```json
-{
-"bad": 0.0, 
-"good": 1.0
-}
-
 ```
